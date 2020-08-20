@@ -1,6 +1,8 @@
 use actix_web::{web, App, Error, HttpRequest, HttpResponse, HttpServer, Responder};
 use futures::future::{ready, Ready};
 use serde::{Deserialize, Serialize};
+use std::sync::mpsc;
+use std::thread;
 
 async fn greet() -> impl Responder {
     format!("Hello!")
@@ -30,7 +32,15 @@ impl Responder for PrimesResult {
 }
 
 async fn generate_primes_handler(params: web::Query<Params>) -> impl Responder {
-    generate_primes(params.number)
+    let (tx, rx) = mpsc::channel();
+
+    thread::spawn(move || {
+        let val = generate_primes(params.number);
+        tx.send(val).unwrap();
+    });
+
+    let received = rx.recv().unwrap();
+    received
 }
 
 #[actix_rt::main]
@@ -51,7 +61,6 @@ fn generate_primes(limit: i32) -> PrimesResult {
     let mut current_value = 0;
 
     while counter <= limit {
-        println!("{}", current_value);
         if is_prime(current_value) {
             result.primes.push(current_value);
         }

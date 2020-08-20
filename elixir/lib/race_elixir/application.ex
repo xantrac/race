@@ -10,7 +10,7 @@ defmodule RaceElixir.Application do
       Plug.Cowboy.child_spec(
         scheme: :http,
         plug: RaceElixir.Endpoint,
-        options: [port: 4001]
+        options: [port: 8001]
       )
     ]
 

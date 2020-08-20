@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    small
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.10.4</li>
+    <li>Erlang: 23.0.3</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz</li>
+    <li>Number of Available Cores: 12</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">rust Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for rust.
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">rust</td>
+        
+        
+          <td>36.07</td>
+          <td>27.73 ms</td>
+          <td>±5.11%</td>
+          <td>27.40 ms</td>
+          <td>27.21 ms, 26.96 ms, 26.90 ms, 27.25 ms, 27.04 ms, 26.94 ms, 27.58 ms</td>
+          <td>26.31 ms</td>
+          <td>37.12 ms</td>
+        
+        <td>181</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"rust","job_name":"rust","input_name":"small","run_time_data":{"statistics":{"absolute_difference":null,"average":27727035.248618785,"ips":36.06588266770479,"maximum":37117980.0,"median":27401980.0,"minimum":26309980.0,"mode":[27205980.0,26959980.0,26902980.0,27253980.0,27043980.0,26942980.0,27576980.0],"percentiles":{"50":27401980.0,"99":36903960.0},"relative_less":null,"relative_more":null,"sample_size":181,"std_dev":1416287.179461994,"std_dev_ips":1.8422325640025055,"std_dev_ratio":0.05107964723825083},"samples":[26979980.0,27131980.0,27016980.0,27551980.0,26915980.0,27404980.0,27474980.0,26836980.0,26840980.0,27043980.0,26900980.0,26942980.0,26858980.0,27199980.0,28925980.0,27922980.0,27882980.0,27133980.0,27640980.0,27434980.0,27427980.0,27049980.0,27105980.0,28098980.0,27665980.0,28430980.0,28939980.0,27155980.0,27742980.0,27707980.0,26930980.0,27207980.0,27205980.0,28619980.0,27231980.0,28961980.0,30412980.0,27458980.0,27389980.0,27517980.0,27851980.0,28299980.0,27406980.0,27201980.0,29329980.0,27660980.0,27388980.0,27516980.0,27686980.0,27425980.0,30014980.0,27826980.0,27158980.0,27279980.0,27410980.0,27405980.0,27510980.0,26797980.0,27179980.0,26879980.0,27842980.0,27240980.0,26860980.0,27362980.0,27238980.0,30640980.0,27100980.0,26888980.0,27084980.0,27822980.0,28066980.0,27256980.0,27399980.0,27529980.0,33392980.0,36856980.0,37117980.0,31923980.0,27307980.0,27265980.0,27586980.0,28017980.0,26484980.0,26309980.0,26942980.0,29344980.0,27253980.0,28083980.0,26953980.0,27576980.0,27248980.0,27589980.0,27129980.0,26692980.0,26758980.0,27734980.0,27104980.0,27706980.0,26959980.0,27292980.0,27142980.0,26903980.0,26977980.0,26872980.0,26902980.0,28504980.0,27850980.0,27329980.0,27432980.0,27348980.0,28015980.0,27266980.0,26559980.0,27965980.0,27696980.0,27498980.0,31159980.0,27669980.0,27606980.0,26802980.0,27022980.0,28029980.0,28348980.0,28475980.0,27433980.0,27555980.0,27460980.0,27271980.0,27447980.0,27341980.0,26745980.0,27927980.0,27858980.0,27571980.0,27357980.0,27899980.0,32399980.0,27558980.0,27043980.0,27492980.0,27034980.0,26815980.0,29396980.0,27576980.0,27518980.0,27269980.0,27235980.0,27394980.0,26868980.0,26612980.0,28281980.0,26706980.0,26951980.0,27253980.0,26946980.0,27052980.0,26902980.0,27583980.0,29580980.0,27059980.0,27975980.0,27321980.0,27430980.0,27401980.0,27454980.0,27351980.0,27068980.0,26982980.0,27983980.0,28181980.0,27478980.0,27070980.0,27085980.0,27205980.0,31970980.0,26959980.0,27058980.0,27011980.0,27705980.0,27831980.0,27712980.0]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (small)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>

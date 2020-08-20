@@ -13,23 +13,15 @@ defmodule RaceElixir.Endpoint do
     %{"number" => number} = conn.params
 
     {int, ""} = Integer.parse(number)
-    {:ok, primes} = NativePrimesGenerator.generate_primes(int)
+    task = Task.async(fn -> NativePrimesGenerator.generate_primes(int) end)
+
+    {:ok, primes} = Task.await(task)
 
     send_resp(conn, 200, primes)
   end
 
   get "/" do
     send_resp(conn, 200, "Boo!")
-  end
-
-  post "/events" do
-    {status, body} =
-      case conn.body_params do
-        %{"events" => events} -> {200, process_events(events)}
-        _ -> {422, missing_events()}
-      end
-
-    send_resp(conn, status, body)
   end
 
   defp process_events(events) when is_list(events) do
