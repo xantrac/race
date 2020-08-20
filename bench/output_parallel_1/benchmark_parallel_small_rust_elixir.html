@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+  <span class="input-label">
+    small
+  </span>
+
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.10.4</li>
+    <li>Erlang: 23.0.3</li>
+    <li>Operating system: macOS</li>
+    <li>Available memory: 32 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz</li>
+    <li>Number of Available Cores: 12</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">rust/elixir Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for rust/elixir.
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">rust/elixir</td>
+        
+        
+          <td>28.42</td>
+          <td>35.18 ms</td>
+          <td>±6.66%</td>
+          <td>33.90 ms</td>
+          <td>33.31 ms</td>
+          <td>33.14 ms</td>
+          <td>44.40 ms</td>
+        
+        <td>285</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.0.1 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"rust/elixir","job_name":"rust/elixir","input_name":"small","run_time_data":{"statistics":{"absolute_difference":38028.07017543912,"average":35184638.596491225,"ips":28.421494148862017,"maximum":4.4397e7,"median":3.39e7,"minimum":3.3138e7,"mode":3.3312e7,"percentiles":{"50":3.39e7,"99":41191399.99999998},"relative_less":0.9989191854260162,"relative_more":1.0010819839980576,"sample_size":285,"std_dev":2341723.779563395,"std_dev_ips":1.8916007483376363,"std_dev_ratio":0.06655528869911208},"samples":[3.3241e7,3.3187e7,3.3566e7,3.4872e7,3.4521e7,3.4371e7,3.3257e7,3.3246e7,3.4906e7,3.4806e7,3.6082e7,3.3345e7,3.3266e7,3.5854e7,3.927e7,4.0368e7,3.9984e7,4.0696e7,3.9623e7,4.0966e7,3.9888e7,3.9572e7,3.9687e7,3.497e7,3.3311e7,3.3152e7,3.6067e7,3.5496e7,3.3931e7,3.3363e7,3.3197e7,3.5699e7,3.3365e7,3.3734e7,3.4282e7,3.371e7,3.5728e7,3.4397e7,3.3312e7,3.3391e7,3.3659e7,3.5506e7,3.3138e7,3.3315e7,3.3235e7,3.4139e7,3.7577e7,3.8772e7,3.8898e7,3.7281e7,3.6276e7,3.3295e7,3.3234e7,3.3551e7,3.3288e7,3.5037e7,3.3211e7,3.3618e7,3.3429e7,3.3285e7,3.4826e7,3.3196e7,3.3347e7,3.3306e7,3.3426e7,3.6515e7,3.3312e7,3.3219e7,3.3355e7,3.3429e7,3.591e7,3.3557e7,3.3354e7,3.334e7,3.3607e7,3.6181e7,3.3298e7,3.3305e7,3.358e7,3.3619e7,3.9044e7,3.4324e7,3.3738e7,3.3517e7,3.5942e7,3.7465e7,3.324e7,3.3369e7,3.3589e7,3.6222e7,3.3575e7,3.33e7,3.3219e7,3.3512e7,3.4913e7,3.3911e7,3.4993e7,3.321e7,3.4313e7,3.5683e7,3.3416e7,3.3163e7,3.3275e7,3.3529e7,3.613e7,3.3181e7,3.3382e7,3.3716e7,3.3325e7,3.5865e7,3.5695e7,3.3744e7,3.3463e7,3.461e7,3.8852e7,4.0445e7,3.9704e7,3.6058e7,3.7429e7,3.4091e7,3.3489e7,3.3476e7,3.3457e7,3.6326e7,3.3625e7,3.3323e7,3.3463e7,3.4685e7,3.8654e7,3.3426e7,3.3348e7,3.3425e7,3.39e7,3.7351e7,3.3278e7,3.3538e7,3.3621e7,3.5714e7,3.444e7,3.3633e7,3.3366e7,3.3305e7,3.6588e7,3.3477e7,3.3445e7,3.3447e7,3.3419e7,3.6495e7,3.438e7,3.3303e7,3.3546e7,3.344e7,3.7529e7,3.3451e7,3.8324e7,3.9452e7,4.0376e7,3.9554e7,3.9068e7,3.9081e7,3.9421e7,3.9363e7,3.5143e7,3.3549e7,3.3441e7,3.5683e7,3.4284e7,3.337e7,3.3364e7,3.3211e7,3.4052e7,3.3351e7,3.3454e7,3.3546e7,3.3742e7,3.6473e7,3.952e7,3.9288e7,3.9233e7,3.9902e7,3.937e7,4.0402e7,4.001e7,4.0883e7,3.9658e7,4.2576e7,4.4397e7,3.851e7,3.9668e7,3.788e7,3.3626e7,3.7207e7,3.8184e7,3.5377e7,3.324e7,3.3373e7,3.3481e7,3.806e7,3.3492e7,3.3398e7,3.3579e7,3.3615e7,3.784e7,3.4187e7,3.3321e7,3.3209e7,3.557e7,3.6684e7,3.3643e7,3.5149e7,3.4774e7,3.5853e7,3.8739e7,3.3321e7,3.4526e7,3.7684e7,3.9157e7,3.6297e7,3.3292e7,3.4146e7,3.852e7,3.8991e7,3.4029e7,3.3307e7,3.3598e7,3.7298e7,3.7432e7,3.5763e7,3.8057e7,3.5394e7,3.8561e7,3.8542e7,3.5344e7,3.3359e7,3.6404e7,3.4037e7,3.3548e7,3.3335e7,3.3515e7,3.6113e7,3.8501e7,3.3515e7,3.3296e7,3.3524e7,3.7719e7,3.4676e7,3.3184e7,3.3371e7,3.4478e7,3.626e7,3.3551e7,3.349e7,3.3441e7,3.3744e7,3.8115e7,3.3982e7,3.3218e7,3.3256e7,3.5742e7,3.4833e7,3.3399e7,3.3367e7,3.3264e7,3.6204e7,3.6183e7,3.3358e7,3.3341e7,3.3369e7,3.6436e7,3.7615e7,3.3624e7,3.351e7,3.3312e7,3.6985e7,3.3283e7,3.3647e7,3.3138e7,3.3704e7,3.9307e7,3.6269e7,3.3371e7,3.3357e7,3.5428e7,3.4478e7,3.3387e7]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = " (small)"
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>
